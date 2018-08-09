@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet,
           View,
-          Button,
+          TouchableOpacity,
           Text,
           ActivityIndicator,
           Alert,
@@ -86,10 +86,6 @@ export default class Info extends React.Component {
           source = {{ uri: data.Poster }}
         />
         <DescText
-          desc = { 'Writer(s)' }
-          text = { data.Writer }
-        />
-        <DescText
           desc = { 'Actor(s)' }
           text = { data.Actors }
         />
@@ -101,10 +97,13 @@ export default class Info extends React.Component {
           desc = { 'IMDB Rating' }
           text = { data.imdbRating }
         />
-        <Button
+        <TouchableOpacity
+          style = { styles.back }
           title = 'BACK'
           onPress = { () => this.props.navigation.navigate('Search') }
-        />
+        >
+          <Text>BACK</Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -131,5 +130,16 @@ const styles = StyleSheet.create({
     width: em(50),
     height: em(70),
     resizeMode: 'stretch',
+  },
+  back: {
+    backgroundColor: '#2196F3',
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexWrap: 'nowrap',
+    maxHeight: em(10),
+    width: em(25),
   },
 })
