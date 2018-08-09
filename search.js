@@ -18,7 +18,7 @@ export default class Search extends React.Component {
       <View style = { styles.view }>
         <View style = { styles.box }>
           <TextInput style = { styles.input }
-            placeholder = 'Digite o título'
+            placeholder = 'Movie or TV Show title'
             placeholderTextColor = 'lightgray'
             onChangeText = {
               (title) => this.setState({ title })
@@ -33,8 +33,8 @@ export default class Search extends React.Component {
                 })
               } else {
                 Alert.alert(
-                  'Título vazio',
-                  'Você precisa digitar um título',
+                  'Empty title',
+                  'You need to type a title',
                   [
                     { text: 'Ok' },
                   ],

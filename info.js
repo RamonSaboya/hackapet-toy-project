@@ -60,10 +60,10 @@ export default class Info extends React.Component {
 
     if (this.state.data.hasOwnProperty('error')) {
       Alert.alert(
-        'Título não encontrado',
-        'Não há nenhum registro com \'' + this.state.title + '\'',
+        'Title not found',
+        'We didn\'t find any title matching \'' + this.state.title + '\'',
         [
-          { text: 'Voltar', onPress: () => {
+          { text: 'Back', onPress: () => {
             this.props.navigation.navigate('Search')
           }},
         ],
